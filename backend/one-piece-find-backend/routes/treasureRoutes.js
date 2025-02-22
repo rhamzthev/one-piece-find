@@ -60,9 +60,9 @@ router.post('/claim', async (req, res) => {
         }
 
         // Check if user already claimed the daily big treasure
-        // For hackathon: if user.lastDailyTreasureClaimed is "today", give smaller reward
+        // For hackathon: if user.collectedDailyTreasure is "today", give smaller reward
         let now = new Date();
-        let lastClaimDate = user.lastDailyTreasureClaimed;
+        let lastClaimDate = user.collectedDailyTreasure;
         let reward = 0;
 
         const isSameDay = lastClaimDate && (
@@ -74,7 +74,7 @@ router.post('/claim', async (req, res) => {
         if (!isSameDay) {
             // user hasn't claimed today's big reward
             reward = treasure.rewardAmount; // e.g. 1000
-            user.lastDailyTreasureClaimed = now;
+            user.collectedDailyTreasure = now;
         } else {
             // user has already claimed big reward => smaller reward
             reward = getRandomSmallReward(); // e.g. between 10 and 100
