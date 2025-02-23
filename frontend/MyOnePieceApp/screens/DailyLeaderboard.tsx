@@ -13,10 +13,10 @@ export default function DailyLeaderboard() {
     useEffect(() => {
         // Example: fetch from your server, or mock it:
         const mockData: LeaderboardItem[] = [
-            { username: 'Luffy', dailySteps: 12000 },
-            { username: 'Zoro', dailySteps: 11500 },
-            { username: 'Nami', dailySteps: 9000 },
-            { username: 'Sanji', dailySteps: 8000 },
+            { username: 'Luffy', dailySteps: 1200 },
+            { username: 'Zoro', dailySteps: 1150 },
+            { username: 'Nami', dailySteps: 900 },
+            { username: 'Sanji', dailySteps: 800 },
         ];
         setData(mockData);
     }, []);
@@ -24,7 +24,7 @@ export default function DailyLeaderboard() {
     const renderItem = ({ item }: { item: LeaderboardItem }) => (
         <View style={styles.itemContainer}>
             <Text style={styles.username}>{item.username}</Text>
-            <Text style={styles.steps}>{item.dailySteps} steps</Text>
+            <Text style={styles.steps}>{item.dailySteps} berries</Text>
         </View>
     );
 
