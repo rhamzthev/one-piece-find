@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MapView from 'react-native-maps';
 import { StyleSheet, View, Text } from 'react-native';
-import Geolocation from '@react-native-community/geolocation';
+// import * as Location from 'expo-location';
 
 export default function App() {
 
@@ -12,20 +12,9 @@ export default function App() {
         longitudeDelta: 0.0421,
     })
 
-    const [position, setPosition] = useState<string | null>(null);
-
-    useEffect(() => {
-        Geolocation.getCurrentPosition((pos) => {
-            setPosition(JSON.stringify(pos));
-        });
-    }, [])
-
-    // Geolocation.getCurrentPosition(info => console.log("Hello"));
-
     return (
         <View style={styles.container}>
-            <Text>Position: {position}</Text>
-            <MapView initialRegion={region} style={styles.map} />
+            <MapView userLocationPriority="high" showsUserLocation={true} followsUserLocation={true} region={region} style={styles.map} />
         </View>
     );
 }

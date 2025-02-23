@@ -4,6 +4,7 @@ import {Auth0Provider} from 'react-native-auth0';
 import config from "@/auth0-configuration";
 import Auth from "@/components/Auth";
 import Main from "@/components/Main";
+import AR from "@/components/AR";
 
 const App = () => {
 
