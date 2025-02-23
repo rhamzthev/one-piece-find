@@ -92,7 +92,6 @@ export default function TreasureMapScreen() {
             .catch((err) => console.log('Pedometer error:', err));
 
         // Camera tilt logic
-        if (!location) return;
         const camera: Camera = {
             center: { latitude: TREASURE_LAT, longitude: TREASURE_LNG },
             pitch: 60,
