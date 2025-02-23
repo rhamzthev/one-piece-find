@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Piece Find - Treasure Hunt Adventure Game</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hero {
+            background: linear-gradient(rgba(0, 0, 50, 0.8), rgba(0, 0, 50, 0.9)),
+                url('/api/placeholder/1920/1080') center/cover;
+            min-height: 100vh;
+        }
+
+        .phone-mockup {
+            position: relative;
+            width: 300px;
+            height: 600px;
+            background: #000;
+            border-radius: 30px;
+            padding: 10px;
+            margin: 20px auto;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 20px;
+            background: #000;
+            border-radius: 20px;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .feature-card {
+            background: rgba(0, 0, 80, 0.9);
+            border: 2px solid #ffd700;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body class="bg-blue-900 text-white">
+    <!-- Hero Section -->
+    <header class="hero flex items-center">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-5xl font-bold text-yellow-400 mb-6">
+                        Embark on a Grand Treasure Hunt!
+                    </h1>
+                    <p class="text-xl mb-8">
+                        Find hidden treasures, earn "Berries," and join the world's most adventurous walking game.
+                    </p>
+                    <a href="#download"
+                        class="bg-yellow-400 text-blue-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-500 inline-block">
+                        Start Your Adventure
+                    </a>
+                </div>
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <img src="/api/placeholder/300/600" alt="App Demo" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- How It Works -->
+    <section class="bg-white text-gray-800 py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">How It Works</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <img src="/api/placeholder/300/300" alt="Open App" class="rounded-lg mb-4 mx-auto">
+                    <h3 class="text-xl font-bold mb-2">1. Open the App</h3>
+                    <p>Check your map for nearby treasures</p>
+                </div>
+                <div>
+                    <img src="/api/placeholder/300/300" alt="Walk to Treasure" class="rounded-lg mb-4 mx-auto">
+                    <h3 class="text-xl font-bold mb-2">2. Follow the Path</h3>
+                    <p>Watch the distance counter as you get closer</p>
+                </div>
+                <div>
+                    <img src="/api/placeholder/300/300" alt="Collect Treasure" class="rounded-lg mb-4 mx-auto">
+                    <h3 class="text-xl font-bold mb-2">3. Claim Your Reward</h3>
+                    <p>Use AR camera to collect your treasure!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-20 bg-blue-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-yellow-400 mb-16">Amazing Features</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card p-6 rounded-xl">
+                    <img src="/api/placeholder/100/100" alt="Nami" class="w-20 h-20 rounded-full mb-4">
+                    <h3 class="text-xl font-bold text-yellow-400 mb-4">Daily Treasures</h3>
+                    <p>New treasure locations every day with rewards up to 1000 Berries!</p>
+                </div>
+                <div class="feature-card p-6 rounded-xl">
+                    <img src="/api/placeholder/100/100" alt="Luffy" class="w-20 h-20 rounded-full mb-4">
+                    <h3 class="text-xl font-bold text-yellow-400 mb-4">AR Discovery</h3>
+                    <p>Use your camera to find and collect virtual treasure chests!</p>
+                </div>
+                <div class="feature-card p-6 rounded-xl">
+                    <img src="/api/placeholder/100/100" alt="Zoro" class="w-20 h-20 rounded-full mb-4">
+                    <h3 class="text-xl font-bold text-yellow-400 mb-4">Real Rewards</h3>
+                    <p>Exchange your Berries for real-world prizes and gift cards!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Preview -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">See It In Action</h2>
+            <div class="flex overflow-x-auto gap-8 pb-8">
+                <div class="phone-mockup flex-shrink-0">
+                    <div class="phone-screen">
+                        <img src="/api/placeholder/300/600" alt="Map Screen" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="phone-mockup flex-shrink-0">
+                    <div class="phone-screen">
+                        <img src="/api/placeholder/300/600" alt="AR Screen" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="phone-mockup flex-shrink-0">
+                    <div class="phone-screen">
+                        <img src="/api/placeholder/300/600" alt="Rewards Screen" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-20 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-yellow-400 mb-8">Ready to Start Your Adventure?</h2>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="#" class="bg-black text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-900">
+                    Download for iOS
+                </a>
+                <a href="#" class="bg-black text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-900">
+                    Download for Android
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm mb-4">
+                One Piece Find is a fan-inspired location-based game, not affiliated with or endorsed by
+                Eiichiro Oda, Shueisha, Toei Animation, or any official One Piece licensors.
+            </p>
+            <div class="space-x-4">
+                <a href="/privacy" class="text-yellow-400 hover:text-yellow-300">Privacy Policy</a>
+                <a href="/terms" class="text-yellow-400 hover:text-yellow-300">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
