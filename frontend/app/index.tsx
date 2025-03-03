@@ -1,24 +1,38 @@
-import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import React, { useState, createContext,useContext } from "react";
+import { StyleSheet } from "react-native";
 import {Auth0Provider} from 'react-native-auth0';
 import config from "@/auth0-configuration";
-import Auth from "@/components/Auth";
-import Main from "@/components/Main";
+import { Redirect, useRouter } from "expo-router";
+
+interface AuthContextProps {
+  auth: boolean,
+  setAuth: React.Dispatch<boolean>;
+}
+
+export const AuthContext = createContext<AuthContextProps>({
+  auth: false,
+  setAuth: () => {}
+});
 
 const App = () => {
 
-    const isLoggedIn = true;
+  const { auth } = useContext(AuthContext);
 
-    if (isLoggedIn)
-        return <Main/>
+    if (auth)
+        return <Redirect href="/main"/>
     else
-        return <Auth/>
+        return <Redirect href="/auth"/>
 }
 
 export default function Home() {
-    return <Auth0Provider domain={config.domain} clientId={config.clientId}>
+
+  const [auth, setAuth] = useState(false);
+
+    return <AuthContext.Provider value={{
+      auth, setAuth
+    }}>
         <App/>
-    </Auth0Provider>
+    </AuthContext.Provider>
 
 }
 
