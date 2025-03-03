@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, Animated } from 'react-native';
 import { SplashScreen, useRouter } from 'expo-router';
 import { useFonts } from 'expo-font';
+import { useOnePiece } from '@/context/OnePieceContext';
 
 export default function CollectScreen() {
+    const { setHasFoundOnePiece } = useOnePiece();
     const router = useRouter();
     const [revealed, setRevealed] = useState(false);
     const [fadeAnim] = useState(new Animated.Value(0));
@@ -36,6 +38,11 @@ export default function CollectScreen() {
         // Set the collected state in storage/context
         // For now, we'll just navigate back
         router.replace('/main');
+    };
+
+    const handleCollect = async () => {
+        await setHasFoundOnePiece(true);
+        // Additional collection logic...
     };
 
     return (

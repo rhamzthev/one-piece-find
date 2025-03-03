@@ -6,6 +6,7 @@ import { FactsDisplay } from '@/components/FactsDisplay';
 import { Compass } from '@/components/Compass';
 import { SplashScreen, useRouter } from 'expo-router';
 import { useFonts } from 'expo-font';
+import { useOnePiece } from '@/context/OnePieceContext';
 
 // Constants for the One Piece location and proximity thresholds
 const ONE_PIECE_LOCATION = {
@@ -24,6 +25,7 @@ const PROXIMITY_THRESHOLDS = {
 export default function App() {
 
     const router = useRouter();
+    const { hasFoundOnePiece } = useOnePiece();
 
     // Add font loading
     const [loaded, error] = useFonts({
@@ -40,8 +42,6 @@ export default function App() {
         return null;
     }
 
-    // Add this to your state declarations
-    const [hasCollected, setHasCollected] = useState(false);
     const [location, setLocation] = useState<Location.LocationObject | null>(null);
     const [loading, setLoading] = useState(true);
     const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -164,7 +164,7 @@ export default function App() {
                 initialRegion={initialRegion}
             >
             </MapView>
-            {!hasCollected && (
+            {!hasFoundOnePiece && (
                 <>
                     <View style={styles.overlayTop}>
                         {location && (
